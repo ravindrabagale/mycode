@@ -1,0 +1,3 @@
+sudo file -s /dev/xvdf
+sudo mkfs  -t  xfs /dev/xvdf
+sudo umount /dev/xvdf

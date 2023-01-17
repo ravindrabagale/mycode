@@ -1,0 +1,10 @@
+sudo chown ec2-user name.sh  //changing ownership of file from root to ec2-user
+bash name.sh
+
+
+1) chmod +x name.sh
+2) ./name.sh
+
+
+read ravi
+$ravi

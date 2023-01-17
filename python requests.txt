@@ -1,0 +1,18 @@
+python -m ensurepip
+pip3 install requests
+pip3 install flask
+
+
+-------------------
+pip3 install django
+django-admin startproject shopping_cart
+ cd shopping_cart
+python manage.py startapp api_app
+
+
+python manage.py makemigrations 
+python manage.py migrate 
+
+
+
+python manage.py createsuperuser

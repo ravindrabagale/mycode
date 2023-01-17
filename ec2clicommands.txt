@@ -1,0 +1,22 @@
+aws ec2 authorize-security-group-ingress --group-id sg-04a0b16af1ae1810e --protocol tcp --port 80 --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-id sg-04a0b16af1ae1810e --protocol tcp --port 22 --cidr 0.0.0.0/0
+aws ec2 create-key-pair --key-name CLIKEY --query 'KeyMaterial' --output text > CLIKEY.ppk
+aws ec2 create-security-group --group-name mysg --description "my-security-group"
+ aws ec2 start-instances --instance-ids i-017f9e6d63d1af891 i-0d80ae2097eb68e87
+aws ec2 terminate-instances --instance-ids i-0fc9dc5aafce6855c
+aws ec2 start-instances --instance-id i-017f9e6d63d1af891
+ aws ec2 stop-instances --instance-id i-017f9e6d63d1af891
+aws ec2 run-instances --image-id ami-08df646e18b182346 --count 1 --instance-type t2.micro --key-name windows --security-group-ids sg-013eb167fe9ff8a68
+aws ec2 describe-security-groups
+aws ec2 describe-security-groups --group-names mysg
+ aws ec2 delete-security-group --group-name mysg
+
+aws ec2 delete-key-pair --key-name majhakey
+
+aws ec2   describe-instance-status --instance-id i-006bcc82b41989403
+aws ec2 describe-instance-status --instance-id i-0c48e525f3b709a0e --include-all-instances
+
+ aws s3api put-bucket-versioning --bucket majhatujhabucket420wala --versioning-configuration Status=Enabled,MFADelete=Disabled --mfa "arn:aws:iam::922892890644:mfa/root-account-mfa-device 282100 "
+aws s3api put-bucket-versioning --bucket majhatujhabucket420wala --versioning-configuration Status=Enabled,MFADelete=Enabled --mfa "arn:aws:iam::922892890644:mfa/root-account-mfa-device 751575 "
+
+aws s3 presign s3://merabillmaffkro/ravi/images/image.png --expires-in 60

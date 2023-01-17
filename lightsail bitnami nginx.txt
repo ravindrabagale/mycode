@@ -1,0 +1,2 @@
+cp -r fireproject /opt/bitnami/nginx/html/fireproject/
+sudo /opt/bitnami/ctlscript.sh start nginx

@@ -1,0 +1,37 @@
+
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'Pass@123';
+alter table student add column phone varchar(20);
+
+alter table student modify column id int primary key auto_increment;
+alter table student add unique( phone);
+create table post( id int not null primary key auto_increment , status varchar(100), url varchar(200));
+ create table media ( id int not null primary key auto_increment , postid int , url varchar(200) , foreign key (postid) references post(id))
+
+ ALTER TABLE posts CHANGE  name username varchar(200);
+ ALTER TABLE posts DROP COLUMN likes;
+ALTER TABLE posts Modify column id int not null auto_increment;
+
+
+ALTER TABLE posts Modify column id int; (to remove auto_increment just remove word auto_increment from command)
+
+ ALTER TABLE posts RENAME to post;
+
+ ALTER TABLE post DROP PRIMARY KEY;
+
+
+ select  COLUMN_NAME, CONSTRAINT_NAME from information_schema.KEY_COLUMN_USAGE where TABLE_NAME = 'likes';
+ALTER TABLE likes DROP foreign key likes_ibfk_1;
+
+select * from posts LIMIT 2;
+select DISTINCT name from posts;
+select * from posts where id between 1 and 4;
+select * from posts where name in("srk","kareena","salman");
+select * from posts where id between 1 and 4 and id not in (2);
+select * from posts where not name="srk";
+select * from posts where posturl is null;
+select id as userid ,name as username from posts;
+delete from post where id=2 LIMIT 1;
+update post set url="https" where url is null;
+
